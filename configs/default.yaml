@@ -1,0 +1,41 @@
+seed: 42
+
+env:
+  id: Connect4-v0
+  height: 6
+  width: 9
+  connect: 4
+
+model:
+  hidden_l1: 6      
+  hidden_l2: 9      
+  hidden_l3: 0
+  hidden_l4: 0
+  hidden_l5: 0
+
+agent:
+  epsilon_start: 0.9
+  epsilon_min: 0.013
+  epsilon_decay: 0.9875
+
+train:
+  algo: dqn_replay
+  num_episodes: 200
+  gamma: 0.9
+  lr: 0.004
+  lr_decay: 0.97
+  min_lr: 0.0001
+
+  replay_buffer_capacity: 10000
+  batch_size: 128
+
+  # self-play style: update opponent every N trainings
+  num_trainings: 1000
+  opponent_update_every: 10
+
+output:
+  run_name: default
+  checkpoints_dir: checkpoints
+  results_dir: results
+  save_every_trainings: 50
+  save_state_dict: true

@@ -1,0 +1,41 @@
+seed: 123
+
+env:
+  id: Connect4-v0
+  height: 6
+  width: 9
+  connect: 4
+
+model:
+  hidden_l1: 6
+  hidden_l2: 9
+  hidden_l3: 0
+  hidden_l4: 0
+  hidden_l5: 0
+
+agent:
+  epsilon_start: 0.9
+  epsilon_min: 0.013
+  epsilon_decay: 0.9875
+
+eval:
+  games: 10000
+  warmup_drop: 600
+
+  # epsilon-greedy on/off during evaluation
+  no_epsilon_agent: false
+  no_epsilon_opponent: false
+
+  # online adaptation 
+  adaptation:
+    enabled: false
+    batch_size: 128
+    gamma: 0.5
+    lr: 0.004
+    lr_decay: 0.97
+    min_lr: 0.0001
+    replay_buffer_capacity: 10000
+
+output:
+  results_dir: results
+  plot_png: true
