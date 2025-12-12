@@ -1,0 +1,13 @@
+name: connect4-dqn-selfplay
+channels:
+  - conda-forge
+  - pytorch
+dependencies:
+  - python=3.12
+  - numpy=1.26
+  - pytorch
+  - pandas
+  - matplotlib
+  - pip
+  - pip:
+      - -r requirements.txt

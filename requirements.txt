@@ -1,0 +1,4 @@
+gym==0.26.2
+gym-connect4==0.8
+tqdm
+ipykernel
